@@ -4,6 +4,8 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { DefaultLayout } from '~/components/DefaultLayout';
 import { trpc } from '~/utils/trpc';
+import '@mantine/core/styles.layer.css';
+import 'mantine-datatable/styles.layer.css';
 import '~/styles/globals.css';
 import { createTheme, MantineProvider } from '@mantine/core';
 

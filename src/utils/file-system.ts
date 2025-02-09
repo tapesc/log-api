@@ -1,5 +1,19 @@
 import { promises as fs } from 'fs';
 import { FileHandle } from 'fs/promises';
+import { DateTime } from 'luxon';
+
+type SyslogMessage = {
+  isParsed: true,
+  timestamp: DateTime;
+  host: string;
+  processName: string;
+  pid?: number;
+  message: string;
+  rawLine: string;
+} | {
+  isParsed: false;
+  rawLine: string;
+}
 
 interface PaginatedResult {
   lines: string[];
@@ -80,4 +94,40 @@ export async function readLines({
   } finally {
     if (fd) await fd.close();
   }
+}
+
+export function parseSyslogLine(line: string): SyslogMessage {
+  // Added more explicit spacing in regex to handle both single and double spaces
+  // Matches both: "sshd[123]:" and "sshd:"
+  const match = line.match(/^(\w+)\s+(\d+)\s+(\d{2}:\d{2}:\d{2})\s+(\S+)\s+([^[\s:]+)(?:\[(\d+)\])?:\s+(.+)$/);
+
+  if (!match) {
+    return {
+      isParsed: false,
+      rawLine: line
+    };
+  }
+
+  const [, month, day, time, host, processName, pid, message] = match;
+
+  // TIL syslog dates don't include the year, so we need to add it
+  const currentYear = new Date().getFullYear();
+  const timestamp = DateTime.fromFormat(
+    `${currentYear} ${month} ${day} ${time}`,
+    "yyyy MMM d HH:mm:ss"
+  );
+
+  if (timestamp > DateTime.now()) {
+    timestamp.minus({ years: 1 });
+  }
+
+  return {
+    isParsed: true,
+    timestamp,
+    host,
+    processName,
+    pid: pid ? parseInt(pid, 10) : undefined,
+    message: message.trim(),
+    rawLine: line
+  };
 }

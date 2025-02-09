@@ -1,6 +1,6 @@
 import { router, publicProcedure } from '../trpc';
 import { z } from 'zod';
-import { readLines } from '~/utils/file-system.ts';
+import { parseSyslogLine, readLines } from '~/utils/file-system.ts';
 import { DateTime } from "luxon";
 
 export const logRouter = router({
@@ -28,23 +28,7 @@ export const logRouter = router({
       });
 
       return {
-        lines: data.lines.map((line) => {
-          const match = /^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}[+-]\d{2})\s(.+)$/.exec(line);
-          if (!match) {
-            return {
-              datetime: undefined,
-              content: line
-            };
-          }
-
-          return {
-            datetime: DateTime.fromFormat(
-              match[1],
-              "yyyy-MM-dd HH:mm:ssZZ"
-            ).toISO(),
-            content: match[2]
-          };
-        }),
+        lines: data.lines.map((line) => parseSyslogLine(line)),
         nextCursor: data.nextCursor,
       }
     }),
