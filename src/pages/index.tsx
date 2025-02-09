@@ -7,23 +7,28 @@ import type { AppRouter } from '~/server/routers/_app';
 
 const IndexPage: NextPageWithLayout = () => {
   const utils = trpc.useUtils();
-  const postsQuery = trpc.post.list.useInfiniteQuery(
-    {
-      limit: 5,
-    },
-    {
-      getNextPageParam(lastPage) {
-        return lastPage.nextCursor;
-      },
-    },
-  );
-
-  const addPost = trpc.post.add.useMutation({
-    async onSuccess() {
-      // refetches posts after a post is added
-      await utils.post.list.invalidate();
-    },
+  const logQuery = trpc.log.list.useQuery({
+    filename: 'install.log',
+    limit: 20,
   });
+
+  // const postsQuery = trpc.post.list.useInfiniteQuery(
+  //   {
+  //     limit: 5,
+  //   },
+  //   {
+  //     getNextPageParam(lastPage) {
+  //       return lastPage.nextCursor;
+  //     },
+  //   },
+  // );
+  //
+  // const addPost = trpc.post.add.useMutation({
+  //   async onSuccess() {
+  //     // refetches posts after a post is added
+  //     await utils.post.list.invalidate();
+  //   },
+  // });
 
   // prefetch all posts for instant navigation
   // useEffect(() => {
@@ -32,6 +37,8 @@ const IndexPage: NextPageWithLayout = () => {
   //     void utils.post.byId.prefetch({ id });
   //   }
   // }, [postsQuery.data, utils]);
+
+  console.log(logQuery.data)
 
   return (
     <div className="flex flex-col bg-gray-800 py-8">
@@ -61,33 +68,33 @@ const IndexPage: NextPageWithLayout = () => {
         <div className="flex flex-col"></div>
         <h2 className="text-3xl font-semibold">
           Latest Posts
-          {postsQuery.status === 'pending' && '(loading)'}
+          {logQuery.status === 'pending' && '(loading)'}
         </h2>
 
-        <button
-          className="bg-gray-900 p-2 rounded-md font-semibold disabled:bg-gray-700 disabled:text-gray-400"
-          onClick={() => postsQuery.fetchNextPage()}
-          disabled={!postsQuery.hasNextPage || postsQuery.isFetchingNextPage}
-        >
-          {postsQuery.isFetchingNextPage
-            ? 'Loading more...'
-            : postsQuery.hasNextPage
-              ? 'Load More'
-              : 'Nothing more to load'}
-        </button>
+        {/*<button*/}
+        {/*  className="bg-gray-900 p-2 rounded-md font-semibold disabled:bg-gray-700 disabled:text-gray-400"*/}
+        {/*  onClick={() => postsQuery.fetchNextPage()}*/}
+        {/*  disabled={!postsQuery.hasNextPage || postsQuery.isFetchingNextPage}*/}
+        {/*>*/}
+        {/*  {postsQuery.isFetchingNextPage*/}
+        {/*    ? 'Loading more...'*/}
+        {/*    : postsQuery.hasNextPage*/}
+        {/*      ? 'Load More'*/}
+        {/*      : 'Nothing more to load'}*/}
+        {/*</button>*/}
 
-        {postsQuery.data?.pages.map((page, index) => (
-          <Fragment key={page.items[0]?.id || index}>
-            {page.items.map((item) => (
-              <article key={item.id}>
-                <h3 className="text-2xl font-semibold">{item.title}</h3>
-                <Link className="text-gray-400" href={`/post/${item.id}`}>
-                  View more
-                </Link>
-              </article>
-            ))}
-          </Fragment>
-        ))}
+        {/*{postsQuery.data?.pages.map((page, index) => (*/}
+        {/*  <Fragment key={page.items[0]?.id || index}>*/}
+        {/*    {page.items.map((item) => (*/}
+        {/*      <article key={item.id}>*/}
+        {/*        <h3 className="text-2xl font-semibold">{item.title}</h3>*/}
+        {/*        <Link className="text-gray-400" href={`/post/${item.id}`}>*/}
+        {/*          View more*/}
+        {/*        </Link>*/}
+        {/*      </article>*/}
+        {/*    ))}*/}
+        {/*  </Fragment>*/}
+        {/*))}*/}
       </div>
 
       <hr />
@@ -104,53 +111,53 @@ const IndexPage: NextPageWithLayout = () => {
              * @see https://react-hook-form.com/
              * @see https://kitchen-sink.trpc.io/react-hook-form
              */
-            e.preventDefault();
-            const $form = e.currentTarget;
-            const values = Object.fromEntries(new FormData($form));
-            type Input = inferProcedureInput<AppRouter['post']['add']>;
-            //    ^?
-            const input: Input = {
-              title: values.title as string,
-              text: values.text as string,
-            };
-            try {
-              await addPost.mutateAsync(input);
-
-              $form.reset();
-            } catch (cause) {
-              console.error({ cause }, 'Failed to add post');
-            }
+            // e.preventDefault();
+            // const $form = e.currentTarget;
+            // const values = Object.fromEntries(new FormData($form));
+            // type Input = inferProcedureInput<AppRouter['post']['add']>;
+            // //    ^?
+            // const input: Input = {
+            //   title: values.title as string,
+            //   text: values.text as string,
+            // };
+            // try {
+            //   await addPost.mutateAsync(input);
+            //
+            //   $form.reset();
+            // } catch (cause) {
+            //   console.error({ cause }, 'Failed to add post');
+            // }
           }}
         >
-          <div className="flex flex-col gap-y-4 font-semibold">
-            <input
-              className="focus-visible:outline-dashed outline-offset-4 outline-2 outline-gray-700 rounded-xl px-4 py-3 bg-gray-900"
-              id="title"
-              name="title"
-              type="text"
-              placeholder="Title"
-              disabled={addPost.isPending}
-            />
-            <textarea
-              className="resize-none focus-visible:outline-dashed outline-offset-4 outline-2 outline-gray-700 rounded-xl px-4 py-3 bg-gray-900"
-              id="text"
-              name="text"
-              placeholder="Text"
-              disabled={addPost.isPending}
-              rows={6}
-            />
+          {/*<div className="flex flex-col gap-y-4 font-semibold">*/}
+          {/*  <input*/}
+          {/*    className="focus-visible:outline-dashed outline-offset-4 outline-2 outline-gray-700 rounded-xl px-4 py-3 bg-gray-900"*/}
+          {/*    id="title"*/}
+          {/*    name="title"*/}
+          {/*    type="text"*/}
+          {/*    placeholder="Title"*/}
+          {/*    disabled={addPost.isPending}*/}
+          {/*  />*/}
+          {/*  <textarea*/}
+          {/*    className="resize-none focus-visible:outline-dashed outline-offset-4 outline-2 outline-gray-700 rounded-xl px-4 py-3 bg-gray-900"*/}
+          {/*    id="text"*/}
+          {/*    name="text"*/}
+          {/*    placeholder="Text"*/}
+          {/*    disabled={addPost.isPending}*/}
+          {/*    rows={6}*/}
+          {/*  />*/}
 
-            <div className="flex justify-center">
-              <input
-                className="cursor-pointer bg-gray-900 p-2 rounded-md px-16"
-                type="submit"
-                disabled={addPost.isPending}
-              />
-              {addPost.error && (
-                <p style={{ color: 'red' }}>{addPost.error.message}</p>
-              )}
-            </div>
-          </div>
+          {/*  <div className="flex justify-center">*/}
+          {/*    <input*/}
+          {/*      className="cursor-pointer bg-gray-900 p-2 rounded-md px-16"*/}
+          {/*      type="submit"*/}
+          {/*      disabled={addPost.isPending}*/}
+          {/*    />*/}
+          {/*    {addPost.error && (*/}
+          {/*      <p style={{ color: 'red' }}>{addPost.error.message}</p>*/}
+          {/*    )}*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </form>
       </div>
     </div>
