@@ -4,9 +4,12 @@ import { DataTable } from 'mantine-datatable';
 import { flatten } from 'lodash';
 import { Button, Group, NumberInput, Stack, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { showNotification } from '@mantine/notifications';
 
 const IndexPage: NextPageWithLayout = () => {
+
+  // store query params in state so that refetches are triggered when they change in state
   const [queryParams, setQueryParams] = useState({
     limit: 100,
     filename: 'test.log',
@@ -24,10 +27,21 @@ const IndexPage: NextPageWithLayout = () => {
       ...queryParams,
     },
     {
+      retry: 1,
       getNextPageParam(lastPage) {
         return lastPage.nextCursor;
       },
     });
+
+  useEffect(() => {
+    if (logQuery.error) {
+      showNotification({
+        message: logQuery.error.message,
+        color: 'red',
+      });
+    }
+  }, [logQuery.error]);
+
 
   return (
     <Stack>

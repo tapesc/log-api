@@ -52,7 +52,6 @@ export async function readLines({
     fd = await fs.open(filePath, 'r');
     const fileStats = await fd.stat();
     const lines: string[] = [];
-    const matchedLines: string[] = [];
 
     let position = cursor ?? fileStats.size;
     let pendingLine = '';
