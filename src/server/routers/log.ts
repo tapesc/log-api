@@ -10,6 +10,7 @@ export const logRouter = router({
         filename: z.string().min(1).default('test.log'),
         limit: z.number().min(1).max(100).default(50),
         cursor: z.number().nullish(),
+        filter: z.string().min(1).optional(),
       }),
     )
     .query(async ({ input }) => {
@@ -19,12 +20,13 @@ export const logRouter = router({
        * @see https://www.prisma.io/docs/concepts/components/prisma-client/pagination
        */
 
-      const {  cursor, limit } = input;
+      const {  cursor, limit, filter } = input;
 
       const data = await readLines({
         filePath: `${process.cwd()}/${input.filename}`,
         limit,
         cursor,
+        filter,
       });
 
       return {

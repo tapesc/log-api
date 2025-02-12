@@ -7,11 +7,10 @@ import { useForm } from '@mantine/form';
 import { useState } from 'react';
 
 const IndexPage: NextPageWithLayout = () => {
-  const utils = trpc.useUtils();
-
   const [queryParams, setQueryParams] = useState({
     limit: 100,
     filename: 'test.log',
+    filter: undefined as string | undefined,
   });
 
   const form = useForm({
@@ -39,7 +38,7 @@ const IndexPage: NextPageWithLayout = () => {
 
       <form
         onSubmit={form.onSubmit((values) => {
-          setQueryParams(values);
+          setQueryParams({ ...values, filter: values.filter === '' ? undefined : values.filter });
         })}
       >
         <Group align="flex-end">
@@ -53,6 +52,13 @@ const IndexPage: NextPageWithLayout = () => {
             label="Page limit"
             key={form.key('limit')}
             {...form.getInputProps('limit')}
+          />
+
+          <TextInput
+            label="Filter"
+            key={form.key('filter')}
+            placeholder="Search keywords"
+            {...form.getInputProps('filter')}
           />
           <Button type="submit">Search</Button>
         </Group>

@@ -32,6 +32,7 @@ interface ReadOptions {
   filePath: string;
   limit: number;
   cursor?: number | null;
+  filter?: string;
   encoding?: BufferEncoding;
   chunkSize?: number;
 }
@@ -42,6 +43,7 @@ export async function readLines({
                                   cursor = null,
                                   encoding = 'utf8',
                                   chunkSize = 1024,
+                                  filter,
                                 }: ReadOptions): Promise<PaginatedResult> {
   const fileBuffer = Buffer.alloc(chunkSize);
   let fd: FileHandle | null = null;
@@ -50,11 +52,15 @@ export async function readLines({
     fd = await fs.open(filePath, 'r');
     const fileStats = await fd.stat();
     const lines: string[] = [];
+    const matchedLines: string[] = [];
 
     let position = cursor ?? fileStats.size;
     let pendingLine = '';
     let limitPosition = position;
     let firstChunk = true;
+
+    // Convert filter to lowercase for case-insensitive matching if filter exists
+    const filterLower = filter?.toLowerCase();
 
     while (position > 0) {
       const readLength = Math.min(chunkSize, position);
@@ -89,7 +95,7 @@ export async function readLines({
           if (chunkLines.length > 0) {
             const validLines = chunkLines
               .reverse()
-              .filter(line => line.length > 0);
+              .filter(line => line.length > 0 && (!filterLower || line.toLowerCase().includes(filterLower)));
             lines.push(...validLines);
           }
 
@@ -109,7 +115,7 @@ export async function readLines({
         const validLines = chunkLines
           .slice(1)
           .reverse()
-          .filter(line => line.length > 0);
+          .filter(line => line.length > 0 && (!filterLower || line.toLowerCase().includes(filterLower)));
         lines.push(...validLines);
       }
 
@@ -128,7 +134,7 @@ export async function readLines({
             forwardBuffer,
             0,
             chunkSize,
-            position + readLength
+            position + readLength,
           );
 
           if (forwardBytesRead > 0) {
@@ -148,7 +154,7 @@ export async function readLines({
       }
     }
 
-    if (pendingLine && pendingLine.length > 0 && lines.length < limit) {
+    if (pendingLine && pendingLine.length > 0 && lines.length < limit && (!filterLower || pendingLine.toLowerCase().includes(filterLower))) {
       lines.push(pendingLine);
     }
 
@@ -171,7 +177,7 @@ export function parseSyslogLine(line: string): SyslogMessage {
   if (!match) {
     return {
       isParsed: false,
-      rawLine: line
+      rawLine: line,
     };
   }
 
@@ -185,7 +191,7 @@ export function parseSyslogLine(line: string): SyslogMessage {
     pid,
     messageId,
     structuredDataStr,
-    message
+    message,
   ] = match;
 
   // Parse priority into facility and severity
@@ -219,7 +225,7 @@ export function parseSyslogLine(line: string): SyslogMessage {
     host,
     priority: {
       facility,
-      severity
+      severity,
     },
     version: parseInt(version, 10),
     processName: processName === '-' ? undefined : processName,
@@ -227,6 +233,6 @@ export function parseSyslogLine(line: string): SyslogMessage {
     messageId: messageId === '-' ? undefined : messageId,
     structuredData: Object.keys(structuredData).length > 0 ? structuredData : undefined,
     message: message?.trim(),
-    rawLine: line
+    rawLine: line,
   };
 }
