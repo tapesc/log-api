@@ -11,7 +11,7 @@ const IndexPage: NextPageWithLayout = () => {
 
   const [queryParams, setQueryParams] = useState({
     limit: 100,
-    filename: 'system.log',
+    filename: 'test.log',
   });
 
   const form = useForm({

@@ -7,7 +7,7 @@ export const logRouter = router({
   list: publicProcedure
     .input(
       z.object({
-        filename: z.string().min(1).default('system.log'),
+        filename: z.string().min(1).default('test.log'),
         limit: z.number().min(1).max(100).default(50),
         cursor: z.number().nullish(),
       }),
@@ -22,7 +22,7 @@ export const logRouter = router({
       const {  cursor, limit } = input;
 
       const data = await readLines({
-        filePath: `/var/log/${input.filename}`,
+        filePath: `${process.cwd()}/${input.filename}`,
         limit,
         cursor,
       });

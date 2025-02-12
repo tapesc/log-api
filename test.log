@@ -1,0 +1,492 @@
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] Oldest log
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Unauthorized access attempt detected
+<34>1 2025-02-11T14:23:01.123Z myhost.example.com appname 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] User login successful
+<13>1 2025-02-11T14:24:05.456Z myhost.example.com appname 5678 - [exampleSDID@32473 iut="4"] Configuration change applied
+<165>1 2025-02-11T14:25:10.789Z myhost.example.com kernel 91011 - - Kernel: CPU temperature exceeded threshold
+<46>1 2025-02-11T14:26:15.000Z myhost.example.com auth 1213 ID99 [authSDID@56789 method="password" result="failure"] Authentication failed for user admin
+<86>1 2025-02-11T14:27:20.333Z myhost.example.com mail 1415 - [mailSDID@67890 status="delivered"] Email sent successfully to user@example.com
+<23>1 2025-02-11T14:28:25.678Z myhost.example.com systemd 1617 - - System reboot scheduled
+<5>1 2025-02-11T14:29:30.999Z myhost.example.com cron 1819 - [cronSDID@23456 jobID="42"] Scheduled job executed
+<11>1 2025-02-11T14:30:35.111Z myhost.example.com firewall 2021 - [firewallSDID@98765 action="blocked" reason="suspicious activity"] IP 192.168.1.100 blocked
+<45>1 2025-02-11T14:31:40.222Z myhost.example.com database 2223 - [dbSDID@55555 query="SELECT * FROM users"] Database query executed successfully
+<92>1 2025-02-11T14:32:45.333Z myhost.example.com backup 2425 - [backupSDID@66666 status="completed"] Nightly backup completed successfully
+<31>1 2025-02-11T14:33:50.444Z myhost.example.com network 2627 - [networkSDID@77777 interface="eth0" status="down"] Network interface eth0 went down
+<72>1 2025-02-11T14:34:55.555Z myhost.example.com security 2829 - [securitySDID@88888 event="unauthorized_access"] Newest entry

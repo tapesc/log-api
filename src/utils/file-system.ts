@@ -1,15 +1,23 @@
 import { promises as fs } from 'fs';
 import { FileHandle } from 'fs/promises';
 import { DateTime } from 'luxon';
+import { Facility, Severity } from '~/utils/constants.ts';
 
 type SyslogMessage = {
-  isParsed: true,
-  timestamp: DateTime;
-  host: string;
-  processName: string;
-  pid?: number;
-  message: string;
+  isParsed: boolean;
   rawLine: string;
+  timestamp?: DateTime;
+  host?: string;
+  priority?: {
+    facility: Facility;
+    severity: Severity;
+  };
+  version?: number;
+  processName?: string;
+  pid?: number;
+  messageId?: string;
+  structuredData?: Record<string, Record<string, string>>;
+  message?: string;
 } | {
   isParsed: false;
   rawLine: string;
@@ -46,6 +54,7 @@ export async function readLines({
     let position = cursor ?? fileStats.size;
     let pendingLine = '';
     let limitPosition = position;
+    let firstChunk = true;
 
     while (position > 0) {
       const readLength = Math.min(chunkSize, position);
@@ -59,6 +68,36 @@ export async function readLines({
       );
 
       const chunk = fileBuffer.subarray(0, bytesRead).toString(encoding);
+
+      // If this is the first chunk and we're starting from a cursor,
+      // we need to find the start of the next complete line
+      if (firstChunk && cursor !== null && cursor !== fileStats.size) {
+        const nextNewline = chunk.indexOf('\n');
+        if (nextNewline !== -1) {
+          // Adjust the chunk to start from the next complete line
+          const adjustedChunk = chunk.substring(nextNewline + 1);
+          limitPosition = position + nextNewline + 1;
+          firstChunk = false;
+
+          // Process the adjusted chunk
+          const chunkLines = adjustedChunk.split('\n');
+          if (pendingLine) {
+            chunkLines[chunkLines.length - 1] += pendingLine;
+            pendingLine = '';
+          }
+
+          if (chunkLines.length > 0) {
+            const validLines = chunkLines
+              .reverse()
+              .filter(line => line.length > 0);
+            lines.push(...validLines);
+          }
+
+          continue;
+        }
+      }
+
+      firstChunk = false;
       const chunkLines = chunk.split('\n');
 
       if (pendingLine) {
@@ -76,9 +115,35 @@ export async function readLines({
 
       pendingLine = chunkLines[0];
 
-      // If we've hit our limit, store the current position and break
+      // If we've hit our limit, find the next line boundary and break
       if (lines.length >= limit) {
-        limitPosition = position + readLength;
+        // Find the last newline in the current chunk
+        const lastNewlinePos = chunk.lastIndexOf('\n');
+        if (lastNewlinePos !== -1) {
+          limitPosition = position + lastNewlinePos + 1;
+        } else {
+          // If no newline in this chunk, we need to read forward to find the next one
+          const forwardBuffer = Buffer.alloc(chunkSize);
+          const { bytesRead: forwardBytesRead } = await fd.read(
+            forwardBuffer,
+            0,
+            chunkSize,
+            position + readLength
+          );
+
+          if (forwardBytesRead > 0) {
+            const forwardChunk = forwardBuffer.subarray(0, forwardBytesRead).toString(encoding);
+            const nextNewline = forwardChunk.indexOf('\n');
+            if (nextNewline !== -1) {
+              limitPosition = position + readLength + nextNewline + 1;
+            } else {
+              // If we still can't find a newline, set to end of forward chunk
+              limitPosition = position + readLength + forwardBytesRead;
+            }
+          } else {
+            limitPosition = position + readLength;
+          }
+        }
         break;
       }
     }
@@ -97,9 +162,11 @@ export async function readLines({
 }
 
 export function parseSyslogLine(line: string): SyslogMessage {
-  // Added more explicit spacing in regex to handle both single and double spaces
-  // Matches both: "sshd[123]:" and "sshd:"
-  const match = line.match(/^(\w+)\s+(\d+)\s+(\d{2}:\d{2}:\d{2})\s+(\S+)\s+([^[\s:]+)(?:\[(\d+)\])?:\s+(.+)$/);
+  // RFC5424 format:
+  // <priority>version timestamp hostname app-name procid msgid structured-data msg
+  const regex = /^<(\d+)>(\d+)\s+(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2}))\s+(\S+)\s+(\S+)\s+(-|\d+)\s+(-|[^\s\[]+)(?:\s+(\[.*?\]))*(?:\s+(.+))?$/;
+
+  const match = line.match(regex);
 
   if (!match) {
     return {
@@ -108,26 +175,58 @@ export function parseSyslogLine(line: string): SyslogMessage {
     };
   }
 
-  const [, month, day, time, host, processName, pid, message] = match;
+  const [
+    ,
+    priorityValue,
+    version,
+    timestampStr,
+    host,
+    processName,
+    pid,
+    messageId,
+    structuredDataStr,
+    message
+  ] = match;
 
-  // TIL syslog dates don't include the year, so we need to add it
-  const currentYear = new Date().getFullYear();
-  const timestamp = DateTime.fromFormat(
-    `${currentYear} ${month} ${day} ${time}`,
-    "yyyy MMM d HH:mm:ss"
-  );
+  // Parse priority into facility and severity
+  const priorityNum = parseInt(priorityValue, 10);
+  const facility = Math.floor(priorityNum / 8) as Facility;
+  const severity = (priorityNum % 8) as Severity;
 
-  if (timestamp > DateTime.now()) {
-    timestamp.minus({ years: 1 });
+  // Parse structured data if present
+  const structuredData: Record<string, Record<string, string>> = {};
+  if (structuredDataStr) {
+    const sdRegex = /\[([^\s\]]+)(?:\s+([^\]]+))?\]/g;
+    let sdMatch;
+    while ((sdMatch = sdRegex.exec(structuredDataStr)) !== null) {
+      const [, sdId, paramsStr] = sdMatch;
+      structuredData[sdId] = {};
+
+      if (paramsStr) {
+        const paramRegex = /([^\s=]+)="([^"]+)"/g;
+        let paramMatch;
+        while ((paramMatch = paramRegex.exec(paramsStr)) !== null) {
+          const [, key, value] = paramMatch;
+          structuredData[sdId][key] = value;
+        }
+      }
+    }
   }
 
   return {
     isParsed: true,
-    timestamp,
+    timestamp: DateTime.fromISO(timestampStr),
     host,
-    processName,
-    pid: pid ? parseInt(pid, 10) : undefined,
-    message: message.trim(),
+    priority: {
+      facility,
+      severity
+    },
+    version: parseInt(version, 10),
+    processName: processName === '-' ? undefined : processName,
+    pid: pid === '-' ? undefined : parseInt(pid, 10),
+    messageId: messageId === '-' ? undefined : messageId,
+    structuredData: Object.keys(structuredData).length > 0 ? structuredData : undefined,
+    message: message?.trim(),
     rawLine: line
   };
 }
