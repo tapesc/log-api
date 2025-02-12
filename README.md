@@ -24,6 +24,7 @@
 ### Start project
 
 ```bash
+yarn
 pnpm dev
 ```
 
